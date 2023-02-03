@@ -60,3 +60,10 @@ def test_divide_two_numbers_float():
     result = calculator.divide(13, 2)
 
     assert result == 6.5
+
+def test_divide_by_zero_returns_inf():
+    calculator = SimpleCalculator()
+
+    result = calculator.divide(5, 0)
+
+    assert result == float('inf')
