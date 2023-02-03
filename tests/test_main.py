@@ -76,3 +76,10 @@ def test_multiply_by_zero_raises_exception():
     # code only passes if it produces the given exception
     with pytest.raises(ValueError):
         calculator.multiply(3, 0)
+
+def test_avg_correct_average():
+    calculator = SimpleCalculator()
+
+    result = calculator.avg([2, 5, 12, 98])
+
+    assert result == 29.25
