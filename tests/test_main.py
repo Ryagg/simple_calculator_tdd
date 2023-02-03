@@ -129,3 +129,10 @@ def test_avg_empty_list_after_treshold_removal_returns_0():
     result = calculator.avg(numbers, lower_treshold=15, upper_treshold=90)
 
     assert result == 0
+
+def test_avg_empty_list_before_treshold_removal_returns_0():
+    calculator = SimpleCalculator()
+
+    result = calculator.avg([], lower_treshold=15, upper_treshold=90)
+
+    assert result == 0
