@@ -115,3 +115,9 @@ def test_avg_lower_treshold_not_included():
     result = calculator.avg(numbers, lower_treshold=2)
 
     assert result == pytest.approx(38,333333)
+
+def test_avg_empty_starting_list_raises_exception():
+    calculator = SimpleCalculator()
+
+    with pytest.raises(ValueError):
+        calculator.avg([])
