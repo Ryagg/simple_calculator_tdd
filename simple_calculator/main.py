@@ -23,9 +23,6 @@ class SimpleCalculator:
             return float('inf')
 
     def avg(self, it, upper_treshold=None, lower_treshold=None):
-        if not len(it):
-            return 0
-
         if not lower_treshold:
             lower_treshold = min(it)
 
