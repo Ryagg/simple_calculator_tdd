@@ -12,3 +12,6 @@ class SimpleCalculator:
 
     def multiply(self, *args):
         return reduce(lambda x, y: x*y, args)
+
+    def divide(self, a, b):
+        return a / b
