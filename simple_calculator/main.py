@@ -23,6 +23,9 @@ class SimpleCalculator:
             return float('inf')
 
     def avg(self, it, upper_treshold=None, lower_treshold=None):
+        if not len(it):
+            return 0
+
         if not lower_treshold:
             lower_treshold = min(it)
 
@@ -31,5 +34,8 @@ class SimpleCalculator:
 
         # keep all elements that are less than or equal to the upper treshold
         _it = [x for x in it if x >= lower_treshold and x <= upper_treshold]
-        # sum + len work with iterables
+
+        if not len(_it):
+            return 0
+
         return sum(_it) / len(_it)

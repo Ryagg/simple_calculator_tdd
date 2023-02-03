@@ -121,3 +121,11 @@ def test_avg_empty_starting_list_raises_exception():
 
     with pytest.raises(ValueError):
         calculator.avg([])
+
+def test_avg_empty_list_after_treshold_removal_returns_0():
+    calculator = SimpleCalculator()
+    numbers = [12, 98]
+
+    result = calculator.avg(numbers, lower_treshold=15, upper_treshold=90)
+
+    assert result == 0
