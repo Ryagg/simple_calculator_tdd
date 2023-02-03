@@ -99,3 +99,19 @@ def test_avg_remove_lower_treshold():
     result = calculator.avg(numbers, lower_treshold=10)
 
     assert result == pytest.approx(55)
+
+def test_avg_upper_treshold_not_included():
+    calculator = SimpleCalculator()
+    numbers = [2, 5, 12, 98]
+
+    result = calculator.avg(numbers, upper_treshold=98)
+
+    assert result == 29.25
+
+def test_avg_lower_treshold_not_included():
+    calculator = SimpleCalculator()
+    numbers = [2, 5, 12, 98]
+
+    result = calculator.avg(numbers, lower_treshold=2)
+
+    assert result == pytest.approx(38,333333)
