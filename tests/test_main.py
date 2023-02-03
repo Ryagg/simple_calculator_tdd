@@ -37,3 +37,10 @@ def test_subtract_two_numbers():
     result = calculator.subtract(10, 3)
 
     assert result == 7
+
+def test_multiply_two_numbers():
+    calculator = SimpleCalculator()
+
+    result = calculator.multiply(6, 4)
+
+    assert result == 24
