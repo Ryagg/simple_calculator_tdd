@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import pytest
 from simple_calculator.main import SimpleCalculator
 
 
@@ -67,3 +68,11 @@ def test_divide_by_zero_returns_inf():
     result = calculator.divide(5, 0)
 
     assert result == float('inf')
+
+def test_multiply_by_zero_raises_exception():
+    calculator = SimpleCalculator()
+
+    # context manager raises
+    # code only passes if it produces the given exception
+    with pytest.raises(ValueError):
+        calculator.multiply(3, 0)
