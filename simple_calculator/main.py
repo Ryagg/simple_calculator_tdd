@@ -22,6 +22,11 @@ class SimpleCalculator:
         except ZeroDivisionError:
             return float('inf')
 
-    def avg(self, it):
+    def avg(self, it, upper_treshold=None):
+        if not upper_treshold:
+            upper_treshold = max(it)
+
+        # keep all elements that are less than or equal to the upper treshold
+        _it = [x for x in it if x <= upper_treshold]
         # sum + len work with iterables
-        return sum(it) / len(it)
+        return sum(_it) / len(_it)

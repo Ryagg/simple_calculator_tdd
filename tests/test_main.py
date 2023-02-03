@@ -83,3 +83,12 @@ def test_avg_correct_average():
     result = calculator.avg([2, 5, 12, 98])
 
     assert result == 29.25
+
+def test_avg_remove_upper_treshold():
+    calculator = SimpleCalculator()
+    numbers = [2, 5, 12, 98]
+
+    result = calculator.avg(numbers, upper_treshold = 90)
+
+    assert result == pytest.approx(6.333333)
+
