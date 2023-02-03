@@ -44,3 +44,12 @@ def test_multiply_two_numbers():
     result = calculator.multiply(6, 4)
 
     assert result == 24
+
+def test_multiply_many_numbers():
+    numbers = range(1, 10)
+
+    calculator = SimpleCalculator()
+
+    result = calculator.multiply(*numbers)
+
+    assert result == 362880
